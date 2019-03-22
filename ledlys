@@ -1,0 +1,49 @@
+/* Start of Code */
+
+#include <FastLED.h>
+
+// How many leds are connected?
+#define NUM_LEDS 22
+
+// Define the Pins
+#define DATA_PIN1 7
+#define DATA_PIN2 8 
+#define DATA_PIN3 9
+#define DATA_PIN4 10
+
+
+
+// Define the array of leds
+CRGB leds[NUM_LEDS];
+
+void setup() {
+  Serial.begin(9600);
+
+  FastLED.addLeds<NEOPIXEL, DATA_PIN1>(leds, NUM_LEDS);
+  FastLED.addLeds<NEOPIXEL, DATA_PIN2>(leds, NUM_LEDS);
+  FastLED.addLeds<NEOPIXEL, DATA_PIN3>(leds, NUM_LEDS);
+  FastLED.addLeds<NEOPIXEL, DATA_PIN4>(leds, NUM_LEDS);
+
+  FastLED.clear();
+
+
+  for (int i = 0; i < NUM_LEDS ; i++) {
+
+    leds[i] = CRGB(255, 255, 100);
+
+  }
+
+  FastLED.setBrightness(100);
+  FastLED.show();
+}
+
+void loop() {
+
+
+}
+
+
+
+
+
+/* End of Code */
